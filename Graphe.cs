@@ -7,8 +7,8 @@ namespace Formes
 {
     public class Graphe
     {
-        int nbnodes;
-        char[,] matrix = new char[100, 100];
+        public int nbnodes;
+        public char[,] matrix = new char[100, 100];
         // on s’autorise 100 nœuds maximum
         // Méthode appelée pour créer la matrice d’adjacence
         // Le paramètre Myfile est typiquement le chemin complet du fichier texte à lire
@@ -40,5 +40,6 @@ namespace Formes
             // Fermeture du StreamReader (obligatoire)
             monStreamReader.Close();
         }
+
     }
 }

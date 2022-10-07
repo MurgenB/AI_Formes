@@ -199,13 +199,13 @@ namespace Formes
         }
         public string Estnombre()
         {
-            if ((this.NbextremiteBasse() == 1) && (this.EstuneextremiteHaute() == 1) && (this.NbextremiteDroite() == 0) && (this.EstuneextremiteGauche() == 0))
+            if ((this.NbextremiteBasse() == 1) && (this.NbextremiteHaute() == 1) && (this.NbextremiteDroite() == 0) && (this.NbextremiteGauche() == 0))
             {
                 return "Mes conaissances disent que c'est un 1";
             }
             else
             {
-                Console.WriteLine("Lol ça marche pas");
+                return "Lol ça marche pas";
             }
         }
     }

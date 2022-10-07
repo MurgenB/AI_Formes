@@ -154,7 +154,10 @@ namespace Formes
             int nb = 0;
             for (int i; i < nbnodes; i++)
             {
-                nb += EstuneextremiteBasse(i);
+                if (EstuneextremiteBasse(i))
+                {
+                    nb++;
+                }
             }
         }
         public int NbextremiteGauche()
@@ -162,7 +165,10 @@ namespace Formes
             int nb = 0;
             for (int i; i < nbnodes; i++)
             {
-                nb += EstuneextremiteGauche(i);
+                if (EstuneextremiteGauche(i))
+                {
+                    nb++;
+                }
             }
             return nb;
         }
@@ -171,7 +177,10 @@ namespace Formes
             int nb = 0;
             for (int i; i < nbnodes; i++)
             {
-                nb += EstuneextremiteDroite(i);
+                if (EstuneextremiteDroite(i))
+                {
+                    nb++;
+                };
             }
             return nb;
         }
@@ -180,7 +189,10 @@ namespace Formes
             int nb = 0;
             for (int i; i < nbnodes; i++)
             {
-                nb += EstuneextremiteHaute(i);
+                if (EstuneextremiteHaute(i))
+                {
+                    nb++;
+                }
             }
             return nb;
         }

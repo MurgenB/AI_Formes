@@ -199,9 +199,22 @@ namespace Formes
         }
         public string Estnombre()
         {
+            // 1
             if ((this.NbextremiteBasse() == 1) && (this.NbextremiteHaute() == 1) && (this.NbextremiteDroite() == 0) && (this.NbextremiteGauche() == 0))
             {
                 return "Mes conaissances disent que c'est un 1";
+            }
+            //2
+
+            //3
+            if ((this.NbextremiteBasse() == 0) && (this.NbextremiteDroite() == 0) && (this.NbextremiteHaute() == 0) && (this.NbextremiteGauche() == 3))
+            {
+                return "Mais c'est un 3 Jamy";
+            }
+            //4
+            if ((this.NbextremiteBasse() == 1) && (this.NbextremiteDroite() == 0) && (this.NbextremiteHaute() == 2) && (this.NbextremiteGauche() == 0))
+            {
+                return "Mais c'est un 4 Jamy";
             }
             else
             {

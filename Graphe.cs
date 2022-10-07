@@ -40,6 +40,156 @@ namespace Formes
             // Fermeture du StreamReader (obligatoire)
             monStreamReader.Close();
         }
+        private bool EstuneextremiteBasse(int n)
+        {
+            int cptbSortant = 0;
+            int cptbEntrant = 0;
+            int cptdSortant = 0;
+            int cptdSortant = 0;
+            for (int i = 0; i < nbnodes; i++)
+            {
+                if (matrix[n, i] == 'b')
+                {
+                    cptbSortant++;
+                }
+                if (matrix[n, i] == 'd')
+                {
+                    cptdSortant++;
+                }
+                if (matrix[i, n] == 'b')
+                {
+                    cptbEntrant++;
+                }
+                if (matrix[i, n] == 'd')
+                {
+                    cptdEntrant++;
+                }
+            }
+            return (cptbSortant == 0) && (cptbEntrant == 1) && (cptdEntrant == 0) && (cptdSortant == 0);
+        }
+        private bool EstuneextremiteHaute(int n)
+        {
+            int cptbSortant = 0;
+            int cptbEntrant = 0;
+            int cptdSortant = 0;
+            int cptdSortant = 0;
+            for (int i = 0; i < nbnodes; i++)
+            {
+                if (matrix[n, i] == 'b')
+                {
+                    cptbSortant++;
+                }
+                if (matrix[n, i] == 'd')
+                {
+                    cptdSortant++;
+                }
+                if (matrix[i, n] == 'b')
+                {
+                    cptbEntrant++;
+                }
+                if (matrix[i, n] == 'd')
+                {
+                    cptdEntrant++;
+                }
+            }
+            return (cptbSortant == 1) && (cptbEntrant == 0) && (cptdEntrant == 0) && (cptdSortant == 0);
+        }
+        private bool EstuneextremiteDroite(int n)
+        {
+            int cptbSortant = 0;
+            int cptbEntrant = 0;
+            int cptdSortant = 0;
+            int cptdSortant = 0;
+            for (int i = 0; i < nbnodes; i++)
+            {
+                if (matrix[n, i] == 'b')
+                {
+                    cptbSortant++;
+                }
+                if (matrix[n, i] == 'd')
+                {
+                    cptdSortant++;
+                }
+                if (matrix[i, n] == 'b')
+                {
+                    cptbEntrant++;
+                }
+                if (matrix[i, n] == 'd')
+                {
+                    cptdEntrant++;
+                }
+            }
+            return (cptbSortant == 0) && (cptbEntrant == 0) && (cptdEntrant == 1) && (cptdSortant == 0);
+        }
+        private bool EstuneextremiteGauche(int n)
+        {
+            int cptbSortant = 0;
+            int cptbEntrant = 0;
+            int cptdSortant = 0;
+            int cptdSortant = 0;
+            for (int i = 0; i < nbnodes; i++)
+            {
+                if (matrix[n, i] == 'b')
+                {
+                    cptbSortant++;
+                }
+                if (matrix[n, i] == 'd')
+                {
+                    cptdSortant++;
+                }
+                if (matrix[i, n] == 'b')
+                {
+                    cptbEntrant++;
+                }
+                if (matrix[i, n] == 'd')
+                {
+                    cptdEntrant++;
+                }
+            }
+            return (cptbSortant == 0) && (cptbEntrant == 0) && (cptdEntrant == 0) && (cptdSortant == 1);
 
+        }
+        public int NbextremiteBasse()
+        {
+            int nb = 0;
+            for (int i; i < nbnodes; i++)
+            {
+                nb += EstuneextremiteBasse(i);
+            }
+        }
+        public int NbextremiteBasse()
+        {
+            int nb = 0;
+            for (int i; i < nbnodes; i++)
+            {
+                nb += EstuneextremiteBasse(i);
+            }
+            return nb;
+        }
+        public int NbextremiteDroite()
+        {
+            int nb = 0;
+            for (int i; i < nbnodes; i++)
+            {
+                nb += EstuneextremiteDroite(i);
+            }
+            return nb;
+        }
+        public int NbextremiteHaute()
+        {
+            int nb = 0;
+            for (int i; i < nbnodes; i++)
+            {
+                nb += EstuneextremiteHaute(i);
+            }
+            return nb;
+        }
+        public string Estnombre()
+        {
+            if ((this.NbextremiteBasse == 1) && (this.EstuneextremiteHaute == 1) && (this.NbextremiteDroite == 0) && (this.EstuneextremiteGauche == 0))
+            {
+                return "Mes conaissances disent que c'est un 1";
+            }
+        }
     }
 }

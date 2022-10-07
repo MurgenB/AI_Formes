@@ -45,7 +45,7 @@ namespace Formes
             int cptbSortant = 0;
             int cptbEntrant = 0;
             int cptdSortant = 0;
-            int cptdSortant = 0;
+            int cptdEntrant = 0;
             for (int i = 0; i < nbnodes; i++)
             {
                 if (matrix[n, i] == 'b')
@@ -72,7 +72,7 @@ namespace Formes
             int cptbSortant = 0;
             int cptbEntrant = 0;
             int cptdSortant = 0;
-            int cptdSortant = 0;
+            int cptdEntrant = 0;
             for (int i = 0; i < nbnodes; i++)
             {
                 if (matrix[n, i] == 'b')
@@ -99,7 +99,7 @@ namespace Formes
             int cptbSortant = 0;
             int cptbEntrant = 0;
             int cptdSortant = 0;
-            int cptdSortant = 0;
+            int cptdEntrant = 0;
             for (int i = 0; i < nbnodes; i++)
             {
                 if (matrix[n, i] == 'b')
@@ -126,7 +126,7 @@ namespace Formes
             int cptbSortant = 0;
             int cptbEntrant = 0;
             int cptdSortant = 0;
-            int cptdSortant = 0;
+            int cptdEntrant = 0;
             for (int i = 0; i < nbnodes; i++)
             {
                 if (matrix[n, i] == 'b')
@@ -152,20 +152,21 @@ namespace Formes
         public int NbextremiteBasse()
         {
             int nb = 0;
-            for (int i; i < nbnodes; i++)
+            for (int i = 0; i < nbnodes; i++)
             {
                 if (EstuneextremiteBasse(i))
                 {
                     nb++;
                 }
             }
+            return nb;
         }
         public int NbextremiteGauche()
         {
             int nb = 0;
-            for (int i; i < nbnodes; i++)
+            for (int i = 0; i < nbnodes; i++)
             {
-                if (EstuneextremiteGauche(i))
+                if (EstuneextremiteGauche(n: i))
                 {
                     nb++;
                 }
@@ -175,7 +176,7 @@ namespace Formes
         public int NbextremiteDroite()
         {
             int nb = 0;
-            for (int i; i < nbnodes; i++)
+            for (int i = 0; i < nbnodes; i++)
             {
                 if (EstuneextremiteDroite(i))
                 {
@@ -187,7 +188,7 @@ namespace Formes
         public int NbextremiteHaute()
         {
             int nb = 0;
-            for (int i; i < nbnodes; i++)
+            for (int i = 0; i < nbnodes; i++)
             {
                 if (EstuneextremiteHaute(i))
                 {
@@ -198,9 +199,13 @@ namespace Formes
         }
         public string Estnombre()
         {
-            if ((this.NbextremiteBasse == 1) && (this.EstuneextremiteHaute == 1) && (this.NbextremiteDroite == 0) && (this.EstuneextremiteGauche == 0))
+            if ((this.NbextremiteBasse() == 1) && (this.EstuneextremiteHaute() == 1) && (this.NbextremiteDroite() == 0) && (this.EstuneextremiteGauche() == 0))
             {
                 return "Mes conaissances disent que c'est un 1";
+            }
+            else
+            {
+                Console.WriteLine("Lol ça marche pas");
             }
         }
     }

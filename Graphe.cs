@@ -8,12 +8,13 @@ namespace Formes
     public class Graphe
     {
         int nbnodes;
-        char[,] matrix = new char[100, 100]; // on s’autorise 100 nœuds maximum
-                                             // Méthode appelée pour créer la matrice d’adjacence
-                                             // Le paramètre Myfile est typiquement le chemin complet du fichier texte à lire
-                                             // Vous pouvez cependant vous contenter du nom du fichier si vous placez le fichier à lire
-                                             // dans le même dossier que l’exécutable (le .exe se trouve dans bin)
-        public void InitMatrice(string myfile)
+        char[,] matrix = new char[100, 100];
+        // on s’autorise 100 nœuds maximum
+        // Méthode appelée pour créer la matrice d’adjacence
+        // Le paramètre Myfile est typiquement le chemin complet du fichier texte à lire
+        // Vous pouvez cependant vous contenter du nom du fichier si vous placez le fichier à lire
+        // dans le même dossier que l’exécutable (le .exe se trouve dans bin)
+        public Graphe(string myfile)
         {
             // Si le fichier n'existe pas, on ne va pas plus loin !
             if (File.Exists(myfile) == false) return;
@@ -33,8 +34,8 @@ namespace Formes
                 ligne = monStreamReader.ReadLine();
                 int y = Convert.ToInt32(ligne);
                 ligne = monStreamReader.ReadLine();
-                matrix[x, y] = ligne[0]; ) // C’est « d » ou « b » normalement
-ligne = monStreamReader.ReadLine();
+                matrix[x, y] = ligne[0];// C’est « d » ou « b » normalement
+                ligne = monStreamReader.ReadLine();
             }
             // Fermeture du StreamReader (obligatoire)
             monStreamReader.Close();

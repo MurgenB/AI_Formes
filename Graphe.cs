@@ -157,12 +157,12 @@ namespace Formes
                 nb += EstuneextremiteBasse(i);
             }
         }
-        public int NbextremiteBasse()
+        public int NbextremiteGauche()
         {
             int nb = 0;
             for (int i; i < nbnodes; i++)
             {
-                nb += EstuneextremiteBasse(i);
+                nb += EstuneextremiteGauche(i);
             }
             return nb;
         }

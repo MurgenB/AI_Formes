@@ -40,6 +40,7 @@ namespace Formes
             // Fermeture du StreamReader (obligatoire)
             monStreamReader.Close();
         }
+
         private bool EstuneextremiteBasse(int n)
         {
             int cptbSortant = 0;
@@ -149,7 +150,8 @@ namespace Formes
             return (cptbSortant == 0) && (cptbEntrant == 0) && (cptdEntrant == 0) && (cptdSortant == 1);
 
         }
-        public int NbextremiteBasse()
+        
+        private int NbextremiteBasse()
         {
             int nb = 0;
             for (int i = 0; i < nbnodes; i++)
@@ -161,7 +163,7 @@ namespace Formes
             }
             return nb;
         }
-        public int NbextremiteGauche()
+        private int NbextremiteGauche()
         {
             int nb = 0;
             for (int i = 0; i < nbnodes; i++)
@@ -173,7 +175,7 @@ namespace Formes
             }
             return nb;
         }
-        public int NbextremiteDroite()
+        private int NbextremiteDroite()
         {
             int nb = 0;
             for (int i = 0; i < nbnodes; i++)
@@ -185,7 +187,7 @@ namespace Formes
             }
             return nb;
         }
-        public int NbextremiteHaute()
+        private int NbextremiteHaute()
         {
             int nb = 0;
             for (int i = 0; i < nbnodes; i++)
